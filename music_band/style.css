@@ -1,0 +1,190 @@
+
+@font-face {
+    font-family: new_rocker;
+    src: url('/fonts/NewRocker-Regular.ttf')
+}
+body{
+    background: url(./images/background\ image.png);
+}
+.container-fluid{
+padding: 0;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+   }
+   
+.carousel-control-next-icon {
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+   }
+*, ::after, ::before {
+    box-sizing:content-box;
+    overflow-x: hidden;
+}
+html{
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.header{
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.carousel {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 5px;
+}
+p, button{
+    font-family: 'New Rocker';
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.header_leftbar p {
+    color:white;
+}
+.header_leftbar{
+    overflow: hidden;
+}
+.header_leftbar p,img, .header_leftbar div {
+    margin: 0px 5px 0 5px !important;
+}
+.line {
+    background-color: #DA6F02;
+    width: 1px;
+    height: 45px;
+}
+.header_registration .btn  {
+    padding: 10px 30px 10px 30px;
+    margin: 0px 15px 0 15px !important;
+    font-weight: 700; 
+    
+}
+.request{
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.do_req button{
+    font-weight: 700; 
+    width: 180px;
+    font-size: 18px;
+
+    padding: 23px;
+}
+
+.do_req p, .title p{
+   align-items: center !important;
+   font-family: 'New Rocker';
+   font-weight: 800;
+   font-size: 30px;
+   color: #555555;
+}
+.do_req, .slider{
+    margin: auto 11% auto 10%;
+}
+.req_image img{
+    padding-right: 50%;
+    width: 758px;
+height: 459px;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.do_slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider_content{
+    margin: 10px 15px 15px 15px;
+    width: 320px;
+    height: 528px;
+    background: rgba(255, 255, 255, 0.8);
+box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.15);
+border-radius: 20px;
+    overflow-y:none ;
+}
+
+.slider_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.img_background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden !important;
+    width: 100%;
+    height: 70%;
+}
+.slider_img_content{
+    overflow-y: hidden !important;
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(50% 50% at 50% 50%, #B1552E 0%, rgba(74, 52, 42, 0.91) 100%);
+    border-radius: 9px;
+    width: 194px;
+    justify-content: center;
+    height: 43px;
+    text-align: center;
+}
+.slider_img_content p{
+    margin-top: 15px;
+}
+.slider_content p:nth-child(3n){
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 0 20px;
+    font-family: normalNunito;
+    overflow-y: hidden !important;
+    font-size: 18px;
+    font-weight: 700;
+}
+.slider{
+    overflow-y: hidden !important;
+}
+.main_container{
+    min-height: calc(100vh - 230px);
+}
+.b-container{
+    width:200px;
+    height:150px;
+    background-color: #ccc;
+    margin:0px auto;
+    padding:10px;
+    font-size:30px;
+    color: #fff;
+}
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    display: none;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+    padding:10px;
+    background-color: #dedede;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+.b-popup-content{
+    width: 30%;
+    background-color: #fff;
+}
