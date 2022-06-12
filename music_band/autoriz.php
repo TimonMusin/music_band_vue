@@ -3,49 +3,6 @@ session_start();
 require_once 'config.php';
 
 
-$sql = "SELECT * FROM users";
-$result = mysqli_query($link, $sql);
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$_SESSION['user_login'] = $_POST['login'];
-$_SESSION['user_password'] = $_POST['password'];
-if (!isset($_COOKIE['user_login']) && !isset($_COOKIE['user_password']))
-{
-  setcookie('user_login',$_SESSION['user_login'],time() + (1000)); 
-  setcookie('user_password',$_SESSION['user_password'],time() + (1000));
-}
- 
-
-
-$fio = $_POST['fio'];
-$login = $_POST['login'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$db_table = "users";
-var_dump('');
-$peremennaya = 0;
-$sql = "INSERT INTO users (name, login, email, password) VALUES ('$fio', '$login', '$email', '$password')";
-$sql_test = "SELECT * FROM users";
-$test_requser = mysqli_query($link, $sql_test);
-while($row = mysqli_fetch_array($test_requser))
-{
-  if (isset($_COOKIE['user_login']) && isset($_COOKIE['user_password']))
-  {
-    if ($_COOKIE['user_login'] == $row['login'] && $_COOKIE['user_password'] == $row['password'] )
-    {
-      $peremennaya = 1;
-       break;
-    }
-  }
-  if ($row['login'] == $login){
-
-    if ($row['password' == $password]){
-      $peremennaya = 1;
-      $_SESSION['user_login'] = $_POST['login'];
-      $_SESSION['user_password'] = $_POST['password'];
-    }
-  }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,17 +27,18 @@ while($row = mysqli_fetch_array($test_requser))
 </head>
 <body>
   <?
-  if ($peremennaya == 0){
-    echo "  <script>
-    alert('Такого логина или пароля не существует');
-    setTimeout(function(){
-        window.location.href = 'index.php';
-      }, 500);
-   </script>   ";
-  }
-  else{
-    //Do stuff
-  }
+ 
+  // if ($peremennaya == 0){
+  //   echo "  <script>
+  //   alert('Такого логина или пароля не существует');
+  //   setTimeout(function(){
+  //       window.location.href = 'index.php';
+  //     }, 500);
+  //  </script>   ";
+  // }
+  // else{
+  //   //Do stuff
+  // }
   
   
   ?>
@@ -92,13 +50,16 @@ while($row = mysqli_fetch_array($test_requser))
                 <img src="images/logo.png" width="27" height="22" alt="" style="transform: rotate(-90deg);">
             </div>
             <div class="header_registration">
-              <p class="btn scale_12" style="color: white;font-size: 32px;"><?php echo $_COOKIE['user_login']; ?></button>
-              <button onclick="Logout()" class="btn scale_12" style="color: #fff; font-size: 22px;">Logout</button>
+              <p class="btn" style="color: white;font-size: 32px;"><?php echo $_COOKIE['login']; ?></button>
+              <a href=""><button class="btn scale_12" style="color: #fff; font-size: 22px;">История заказов</button></a>
+              <a href="current_orders.php"><button class="btn scale_12" style="color: #fff; font-size: 22px;">Текущие заказы</button></a>
+              <a href="logout.php"><button class="btn scale_12" style="color: #fff; font-size: 22px;">Logout</button></a>
               <img onclick="ToTheBasket()" class="scale_12" src="images/basket.png" alt="asd" width="30" height="30">
               
             </div>
         </div>
         <div class="main_container mt-4">
+        
         <div class="slider">
        
                 <div class="title">
@@ -321,6 +282,7 @@ while($row = mysqli_fetch_array($test_requser))
             $(".b-popup").css("display", "block");
         }
         function Logout(){
+
             location.href = "index.php";
         }
         //Функция скрытия PopUp

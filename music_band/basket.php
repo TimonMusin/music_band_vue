@@ -54,8 +54,11 @@ while($row = mysqli_fetch_array($test_requser))
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="basket.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -155,7 +158,7 @@ while($row = mysqli_fetch_array($test_requser))
                     </div>
                 </div> -->
                 <div class="payment mt-5">
-                    <button class="btn btn-primary">Оплатить</button>
+                    <a href="creating_order.php"><button class="btn btn-primary">Оплатить</button></a>
                     <p>К оплате: 1000Р</p>
                 </div>
             </div>

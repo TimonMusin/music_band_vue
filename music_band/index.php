@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include 'if_isset_user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +18,30 @@
     <link rel="stylesheet" href="on_hover.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+  <?php
+ if (isset($_SESSION['autoriz_login_error']) || isset($_SESSION['autoriz_password_error']) )
+ {
+
+   echo $_SESSION['autoriz_password_error'];
+   echo $_SESSION['autoriz_login_error'];
+
+   //очищаем
+  //  unset($_SESSION['autoriz_password_error']);
+  //  unset($_SESSION['autoriz_password_error']);
+  sleep(3);
+   $_SESSION['autoriz_password_error'] = "";
+   $_SESSION['autoriz_login_error'] = "";
+
+ }
+  ?>
     <div class="container-fluid" id="app">
         <div class="header d-flex col-md-12  align-items-center">
             <div class="header_leftbar d-flex justify-content-lg-between align-items-center align-self-center">
@@ -186,10 +206,10 @@
                       </form>
                       
                     </div>
-                    <form action="autoriz.php" method="POST">
+                    <form action="autoriz_validation.php" method="POST">
                       <div class="log">
                         <input type="text" name="login" class="input" placeholder="Логин">
-                        <input type="text" name="password" class="input" placeholder="Пароль">
+                        <input type="password" name="password" class="input" placeholder="Пароль">
                         <button type="submit" class="btn col-lg-3 offset-4">Войти</button>
                       </div>
 

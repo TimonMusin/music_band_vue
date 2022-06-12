@@ -1,15 +1,17 @@
 .scale_12:hover{
     cursor: pointer;
     overflow: hidden;
-    transform: scale(1.2);
+    transform: scale(1.02);
 }
 .scale_15:hover{
+    overflow: hidden;
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.05);
 }
 .scale_20:hover{
     cursor: pointer;
-    transform: scale(2);
+    overflow: hidden;
+    transform: scale(1.2);
 }
 .text_color_black:hover{
     cursor: pointer;
@@ -26,4 +28,8 @@
 .background_color_white:hover{
     cursor: pointer;
     background-color: white;
+}
+.header_registration{
+    overflow: hidden;
+    
 }
